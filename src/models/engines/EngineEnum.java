@@ -1,20 +1,20 @@
-package models;
+package models.engines;
 
 import exceptions.UnknownEngineException;
 
-public enum Engine {
+public enum EngineEnum {
     ELECTRICAL_MOTOR("Electrical Motor"),
     FUEL_MOTOR("Fuel Motor"),
     GAS_MOTOR("Gas Motor");
 
     private final String value;
 
-    Engine(String val) {
+    EngineEnum(String val) {
         this.value = val;
     }
 
-    public static Engine findByValue(String name) throws UnknownEngineException {
-        for(Engine eng : values()){
+    public static EngineEnum findByValue(String name) throws UnknownEngineException {
+        for(EngineEnum eng : values()){
             if(eng.value.equalsIgnoreCase(name)){
                 return eng;
             }

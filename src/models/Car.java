@@ -1,12 +1,13 @@
 package models;
 
 import exceptions.MissingEngineException;
+import models.engines.AbstractEngine;
 
 import java.util.Arrays;
 
 public class Car {
     private final Wheel[] wheels = new Wheel[4];
-    private Engine engine;
+    private AbstractEngine engine;
 
     public Car(){
         for(int i = 0; i < 4; i++){
@@ -14,7 +15,7 @@ public class Car {
         }
     }
 
-    public Car(Engine eng){
+    public Car(AbstractEngine eng){
         this();
         engine = eng;
         System.out.println("Create " + eng);
@@ -30,11 +31,11 @@ public class Car {
         }
     }
 
-    public Engine getEngine() {
+    public AbstractEngine getEngine() {
         return engine;
     }
 
-    public void setEngine(Engine eng) {
+    public void setEngine(AbstractEngine eng) {
         this.engine = eng;
         System.out.println(eng + " has been added to your car!");
     }
